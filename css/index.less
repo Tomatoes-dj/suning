@@ -1,0 +1,110 @@
+@import "common"; //将刚才设置好的 common.less 引入到index.less里面
+
+//@import 导入的意思，可以把一个CSS文件导入到另外一个CSS文件里
+//link 是将CSS文件引入到html页面里面
+body {
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    // line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #F2F2F2;
+}
+
+//默认字体大小为50，就按50计算rem ，最后结果是xrem ，页面缩放会影响rem
+@basefont: 50;
+
+.search-content {
+    display: flex;
+    //固定定位让它居中，千万不要用margin 修改left 来让它居中
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 88rem / @basefont;
+    background-color: #ffc001;
+
+    .classify {
+        width: 44rem / @basefont;
+        height: 70rem / @basefont;
+        margin: 11rem / @basefont 25rem / @basefont 7rem / @basefont 24rem / @basefont;
+        background: url(../images/classify.png) no-repeat;
+        //背景缩放
+        background-size: 44rem / @basefont 70rem / @basefont;
+    }
+
+    .search {
+        flex: 1;
+
+        input {
+            outline: none;
+            border: 0;
+            height: 66rem / @basefont;
+            width: 100%;
+            border-radius: 33rem / @basefont;
+            background-color: #fff2cc;
+            margin-top: 11rem / @basefont;
+            font-size: 25rem / @basefont;
+            padding-left: 55rem / @basefont;
+            color: #757575;
+        }
+    }
+
+    .login {
+        width: 75rem / @basefont;
+        height: 70rem / @basefont;
+        line-height: 70rem / @basefont;
+        margin: 10rem / @basefont ;
+        font-size: 25rem / @basefont;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+// banner
+.banner {
+    width: 750rem / @basefont;
+    height: 368rem / @basefont;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//ad
+.ad {
+    display: flex;
+
+    a {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+nav {
+    width: 750rem / @basefont;
+
+    a {
+        float: left;
+        width: 150rem / @basefont;
+        height: 140rem / @basefont;
+        text-align: center;
+
+        img {
+            display: block;
+            width: 82rem / @basefont;
+            height: 82rem / @basefont;
+            margin: 10rem / @basefont auto 0;
+        }
+
+        span {
+            font-size: 25rem / @basefont;
+            color: #333;
+        }
+    }
+}
